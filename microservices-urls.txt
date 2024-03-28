@@ -1,0 +1,4 @@
+#http://localhost:6427/gcv
+https://gcv-microservices.lis.ncgr.org/lis
+#https://gcv-microservices.lis.ncgr.org/lisnew
+#https://gcv.legumeinfo.org/gcv/microservices
