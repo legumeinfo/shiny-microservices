@@ -1,4 +1,5 @@
+# For local GCV microservices
 #http://localhost:6427/gcv
+
+# Provides genes, chromosome, micro-synteny-search, macro-synteny-blocks, search, chromosome-region
 https://gcv-microservices.lis.ncgr.org/lis
-#https://gcv-microservices.lis.ncgr.org/lisnew
-#https://gcv.legumeinfo.org/gcv/microservices

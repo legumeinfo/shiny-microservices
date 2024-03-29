@@ -1,8 +1,13 @@
 # --------------------------------------------------------------
 
 # read available LIS microservices URLs
-microservices_urls <- scan(file = "microservices-urls.txt", what = character())
-microservices_urls <- microservices_urls[!startsWith(microservices_urls, "#")]
+readURLs <- function(fin) {
+  urls <- readLines(fin)
+  urls <- trimws(urls)
+  # Ignore blank or commented lines
+  urls[!(nchar(urls) == 0 | startsWith(urls, "#"))]
+}
+microservices_urls <- readURLs("microservices-urls.txt")
 
 ui <- fluidPage(
   h2("Shiny LIS Microservices Interface"),
