@@ -96,6 +96,30 @@ ui <- fluidPage(
       actionButton("cr", "Go"),
       p(),
       textAreaInput(inputId = "crResults", label = "Results", width = "100%", height = "256px")
+    ),
+    tabPanel(
+      title = "Gene Linkouts",
+      style = "background-color: #C0FFFF; padding: 8px;",
+      h4("Gene Linkouts"),
+      p("Linkout microservices are primarily intended for generating links to other user-facing endpoints given some information like a gene id. For example, an application displaying genes from many species may wish to allow the user to obtain possible destinations that are species specific, and the gene linkout service would mediate this so that all applications within a site can rely on the same logic and provide consistent user experience."),
+      p(HTML("<a href='https://github.com/legumeinfo/microservices/tree/main/linkouts' target='_blank'>View on GitHub</a>")),
+      textInput(inputId = "glGenes", label = "Genes:", width = "100%"),
+      actionButton("glExample", "Example"),
+      actionButton("gl", "Go"),
+      p(),
+      textAreaInput(inputId = "glResults", label = "Results", width = "100%", height = "256px")
+    ),
+    tabPanel(
+      title = "Genomic Region Linkouts",
+      style = "background-color: #80C0FF; padding: 8px;",
+      h4("Genomic Region Linkouts"),
+      p("Linkout microservices are primarily intended for generating links to other user-facing endpoints given some information like a gene id. For example, an application displaying genes from many species may wish to allow the user to obtain possible destinations that are species specific, and the gene linkout service would mediate this so that all applications within a site can rely on the same logic and provide consistent user experience."),
+      p(HTML("<a href='https://github.com/legumeinfo/microservices/tree/main/linkouts' target='_blank'>View on GitHub</a>")),
+      textInput(inputId = "grlGenomicRegions", label = "Genomic Regions:", width = "100%"),
+      actionButton("grlExample", "Example"),
+      actionButton("grl", "Go"),
+      p(),
+      textAreaInput(inputId = "grlResults", label = "Results", width = "100%", height = "256px")
     )
   )
 )

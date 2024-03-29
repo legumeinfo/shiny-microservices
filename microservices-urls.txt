@@ -3,3 +3,6 @@
 
 # Provides genes, chromosome, micro-synteny-search, macro-synteny-blocks, search, chromosome-region
 https://gcv-microservices.lis.ncgr.org/lis
+
+# Provides gene_linkouts, genomic_region_linkouts
+https://services.lis.ncgr.org

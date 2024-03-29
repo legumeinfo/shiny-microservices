@@ -120,6 +120,40 @@ server = function(input, output, session) {
       updateTextAreaInput(session, "crResults", value = as.character(e))
     })
   })
+
+  observeEvent(input$glExample, {
+    updateTextInput(session, "glGenes", value = "glyma.Wm82.gnm4.ann1.Glyma.06G088000,glyma.Wm82.gnm4.ann1.Glyma.06G089000")
+  })
+  observeEvent(input$gl, {
+    tryCatch({
+      genes <- trimws(input$glGenes)
+      btg <- basicTextGatherer()
+      curlPerform(url = sprintf("%s/gene_linkouts?genes=%s",
+        input$microservicesUrl, genes), writefunction = btg$update)
+      updateTextAreaInput(session, "glResults", value = btg$value())
+    }, warning = function(w) {
+      updateTextAreaInput(session, "glResults", value = as.character(w))
+    }, error = function(e) {
+      updateTextAreaInput(session, "glResults", value = as.character(e))
+    })
+  })
+
+  observeEvent(input$grlExample, {
+    updateTextInput(session, "grlGenomicRegions", value = "phavu.G19833.gnm1.Chr02:100000-200000")
+  })
+  observeEvent(input$grl, {
+    tryCatch({
+      genomic_regions <- trimws(input$grlGenomicRegions)
+      btg <- basicTextGatherer()
+      curlPerform(url = sprintf("%s/genomic_region_linkouts?genomic_regions=%s",
+        input$microservicesUrl, genomic_regions), writefunction = btg$update)
+      updateTextAreaInput(session, "grlResults", value = btg$value())
+    }, warning = function(w) {
+      updateTextAreaInput(session, "grlResults", value = as.character(w))
+    }, error = function(e) {
+      updateTextAreaInput(session, "grlResults", value = as.character(e))
+    })
+  })
 }
 
 # --------------------------------------------------------------
